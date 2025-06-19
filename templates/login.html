@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Login - Karmanayan{% endblock %}
+
+{% block content %}
+<section style="max-width: 400px; margin: auto; padding: 2rem;">
+  <h1 style="color: #374785;">Login to Karmanayan</h1>
+
+  <form method="POST" action="/login" style="margin-top: 2rem;">
+    <label>Email:</label><br>
+    <input type="email" name="email" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;"><br>
+
+    <label>Password:</label><br>
+    <input type="password" name="password" required style="width: 100%; padding: 0.5rem; margin-bottom: 1rem;"><br>
+
+    <button type="submit" style="background-color: #374785; color: white; padding: 0.6rem 1.2rem; border: none; border-radius: 5px;">
+      Login
+    </button>
+  </form>
+
+  <p style="margin-top: 1rem; text-align: center;">
+    Don't have an account?
+    <a href="{{ url_for('signup') }}" style="color: #374785; font-weight: bold;">Sign up here</a>
+  </p>
+</section>
+{% endblock %}

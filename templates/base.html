@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Karmanayan{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <header>
+  <div style="display: flex; align-items: center; gap: 1rem;">
+    <a href="{{ url_for('home') }}">
+      <img src="{{ url_for('static', filename='logo.png') }}" alt="Karmanayan Logo" style="height: 50px;" />
+    </a>
+  </div>
+  <nav>
+    <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('vision') }}">Vision</a>
+    <a href="{{ url_for('team') }}">Team</a>
+    <a href="{{ url_for('contact') }}">Contact</a>
+    <a href="{{ url_for('login') }}">Login</a>
+  </nav>
+</header>
+
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <!-- ✅ Footer Starts Here -->
+  <footer style="background-color: #374785; color: white; padding: 1.5rem 1rem; text-align: center; margin-top: 3rem;">
+    <p style="margin: 0;">&copy; 2025 Karmanayan. All rights reserved.</p>
+    <div style="margin-top: 0.5rem;">
+      <a href="{{ url_for('home') }}" style="color: white; margin: 0 0.75rem; text-decoration: none;">Home</a>
+      <a href="{{ url_for('vision') }}" style="color: white; margin: 0 0.75rem; text-decoration: none;">Vision</a>
+      <a href="{{ url_for('team') }}" style="color: white; margin: 0 0.75rem; text-decoration: none;">Team</a>
+      <a href="{{ url_for('contact') }}" style="color: white; margin: 0 0.75rem; text-decoration: none;">Contact</a>
+    </div>
+    <p style="font-size: 0.9rem; margin-top: 0.5rem;">Made with ❤️ by Team Karmanayan</p>
+  </footer>
+
+</body>
+</html>
